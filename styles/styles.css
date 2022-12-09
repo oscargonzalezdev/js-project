@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right bottom, #7c66a5eb, #4b9493eb) 50% fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.popup {
+    text-align: center;
+    max-width: 500px;
+    color: #fff;
+    height: fit-content;
+    background-color: black;
+    padding: 40px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.popup {
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+#end, #gameBoard {
+    display: none;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-info div, .selection div {
+    min-width: 120px;
+    text-align: center;
+}
+
+.selection {
+    text-transform: uppercase;
+}
+
+.playerEmoji {
+    font-size: 3rem;
+}
+
+.selection {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#playerName {
+    text-transform: capitalize;
+}
+
+main {
+    min-width: 800px;
+    min-height: 500px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00000080;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.options div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options .btn {
+    min-width: 170px;
+    font-size: 1.9rem;
+}

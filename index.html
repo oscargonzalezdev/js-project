@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./game.js" defer></script>
-</head>
-<body>
-</body>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./src/game.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- POPUPS -->
+      <div>
+        <section class="popup" id="start">
+          <h2>WELCOME</h2>
+          <input
+            type="text"
+            id="selectedName"
+            placeholder="Your Name"
+            required
+          />
+          <p>
+            Play 'Rock, Paper, Scissors' againt the computer. The first to get 5
+            points wins.
+          </p>
+          <button onclick="closePopup('start') & startGame()" class="btn">
+            START
+          </button>
+        </section>
+        <section class="popup" id="end">
+          <h2>GAME OVER</h2>
+          <div id="msgContainer"></div>
+          <button type="submit" class="btn" onclick="reset()">TRY AGAIN</button>
+        </section>
+      </div>
+      <!-- GAME BOARD -->
+      <div id="gameBoard">
+        <header>
+          <h1>Rock, Paper, Scissors</h1>
+        </header>
+        <main>
+          <section class="score-info">
+            <div>
+              <span class="playerEmoji">👨‍💻</span>
+              <h1 id="playerName">Player</h1>
+              <h1 id="playerScore">0</h1>
+            </div>
+            <div>
+              <h1 class="playerEmoji">VS</h1>
+            </div>
+            <div>
+              <span class="playerEmoji">🤖</span>
+              <h1>Computer</h1>
+              <h1 id="computerScore">0</h1>
+            </div>
+          </section>
+          <section class="selection">
+            <div>
+              <h1 id="playerSelection"></h1>
+            </div>
+            <div>
+              <h1 id="computerSelection"></h1>
+            </div>
+          </section>
+          <section class="options">
+            <p>Select your option:</p>
+            <div>
+              <button class="btn" onclick="playRound('rock', computerPlay())">
+                ROCK
+              </button>
+              <button class="btn" onclick="playRound('paper', computerPlay())">
+                PAPER
+              </button>
+              <button
+                class="btn"
+                onclick="playRound('scissors', computerPlay())"
+              >
+                SCISSORS
+              </button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>
