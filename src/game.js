@@ -1,4 +1,3 @@
-
 //global variables
 let playerScore = 0
 let computerScore = 0
@@ -15,7 +14,6 @@ function computerPlay() {
             return 'scissors'
     }
 }
-
 
 // compare both selection and return the winner
 function playRound(playerSelection, computerSelection) {
@@ -43,41 +41,11 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// play game
-// function game() {
-//     do {
-//         playRound(playerSelection(), computerPlay())
-//     } while (rounds > 0)
-
-//     // game results
-//     if (playerScore > computerScore) {
-//         return alert(`Rounds Completed!\n You win! 🏆 \n Player: ${playerScore} Computer: ${computerScore}`)
-//     } else if (playerScore < computerScore) {
-//         return alert(`Rounds Completed!\n Computer wins! 🤖 \n Player: ${playerScore} Computer: ${computerScore}`)
-//     } else {
-//         return alert(`Rounds Completed!\n Nobody wins! \n Player: ${playerScore} Computer: ${computerScore} \n Please play again!`)
-//     }
-// }
-
-// game()
-
-
-// create a new element
-
-// const paragraph = document.createElement('p')
-// paragraph.innerHTML = `Hey I'm red!`
-// paragraph.style.color = 'red'
-
-// const header = document.createElement('h3')
-// header.innerHTML = `I'm a blue h3`
-// header.setAttribute('style', 'color: blue')
-
-
-// const body = document.querySelector('body')
-
-// body.appendChild(paragraph)
-// body.appendChild(header)
-
+const startForm = document.querySelector('#start').addEventListener('submit', e => {
+    e.preventDefault()
+    closePopup('start')
+    startGame()
+})
 
 // functions
 const closePopup = (popupID) => {
@@ -90,7 +58,7 @@ const startGame = () => {
     gameBoard.style.display = 'block'
     const selectedName = document.getElementById('selectedName').value
     const playerName = document.getElementById('playerName')
-    if (selectedName.length > 1) {
+    if (selectedName) {
         playerName.innerText = selectedName
     }
 }

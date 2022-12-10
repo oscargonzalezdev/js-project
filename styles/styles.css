@@ -1,20 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Lilita+One&family=VT323&display=swap');
+
+:root {
+    --color-primary: #7c66a5eb;
+    --color-secondary: #4b9493eb;
+    --color-dark: #262e2eeb;
+    --color-light: #ffe1bd;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html body {
+    background: linear-gradient(to right bottom, #252525, #363636eb) 50% fixed;
+    font-family: 'Baloo 2', 'Courier New', Courier, monospace;
+}
+
 button {
-    font-size: 1.2rem;
+    font-size: 2rem;
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'VT323', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+button:hover {
+    background-color: #ffe1bd;
 }
 
 .container {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right bottom, #7c66a5eb, #4b9493eb) 50% fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,11 +43,13 @@ button {
 }
 
 .popup {
+    font-size: 1.5rem;
+    line-height: 1.7;
     text-align: center;
     max-width: 500px;
-    color: #fff;
+    color: var(--color-light);
     height: fit-content;
-    background-color: black;
+    background: linear-gradient(to right bottom, var(--color-primary), var(--color-secondary)) 50% fixed;
     padding: 40px;
     border-radius: 10px;
     position: absolute;
@@ -44,18 +66,34 @@ button {
     gap: 30px;
 }
 
-.popup {
-    font-size: 1.5rem;
-    line-height: 1.7;
+.popup input {
+    font-size: inherit;
+    padding: 15px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    text-align: inherit;
 }
 
-#end, #gameBoard {
+.popup input::placeholder {
+    color: inherit;
+}
+
+#end,
+#gameBoard {
     display: none;
 }
 
 header {
     text-align: center;
     margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Lilita One', 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: rgb(6, 84, 82);
 }
 
 
@@ -79,7 +117,8 @@ header {
     align-items: center;
 }
 
-.score-info div, .selection div {
+.score-info div,
+.selection div {
     min-width: 120px;
     text-align: center;
 }
@@ -103,14 +142,15 @@ header {
 }
 
 main {
-    min-width: 800px;
-    min-height: 500px;
+    min-width: 50vw;
+    min-height: 80vh;
     padding: 50px;
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #00000080;
+    background: linear-gradient(to right bottom, var(--color-primary), var(--color-secondary)) 50% fixed;
     color: #fff;
     border-radius: 10px;
 }
@@ -133,4 +173,9 @@ main {
 .options .btn {
     min-width: 170px;
     font-size: 1.9rem;
+}
+
+#playerScore,
+#computerScore {
+    font-size: 4rem;
 }
